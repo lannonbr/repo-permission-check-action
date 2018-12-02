@@ -2,11 +2,10 @@ const { Toolkit } = require("actions-toolkit");
 const tools = new Toolkit();
 const octokit = tools.createOctokit();
 
-const user = process.env.GITHUB_ACTOR;
-const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
+const username = tools.context.actor;
 
 octokit.repos
-  .getCollaboratorPermissionLevel({ owner, repo, username: user })
+  .getCollaboratorPermissionLevel(tools.context.repo({ username }))
   .then(response => {
     if (["write", "admin"].includes(response.data.permission)) {
       process.exit(0);
