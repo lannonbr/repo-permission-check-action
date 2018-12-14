@@ -6,13 +6,13 @@ const perms = ["admin", "write", "read", "none"];
 
 const username = tools.context.actor;
 (async () => {
-  const response = octokit.repos.getCollaboratorPermissionLevel(
+  const response = await octokit.repos.getCollaboratorPermissionLevel(
     tools.context.repo({ username })
   );
 
   let permission = response.data.permission;
 
-  console.log(tools.arguments);
+  console.log({ args: tools.arguments });
 
   // let yourPermIdx = perms.indexOf(permission);
 
