@@ -17,7 +17,7 @@ Say I want to have an action to only pass if a user has write access to the repo
 
 ```workflow
 action "Check Push Access" {
-  uses = "lannonbr/repo-push-check-action@master"
+  uses = "lannonbr/repo-permission-check-action@master"
   args = ["write"]
   secrets = ["GITHUB_TOKEN"]
 }
