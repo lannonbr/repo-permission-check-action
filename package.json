@@ -1,19 +1,19 @@
 {
-  "name": "repo-push-check-action",
+  "name": "repo-permission-check-action",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/lannonbr/repo-push-check-action.git"
+    "url": "https://github.com/lannonbr/repo-permission-check-action.git"
   },
   "author": "Benjamin Lannon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lannonbr/repo-push-check-action/issues"
+    "url": "https://github.com/lannonbr/repo-permission-check-action/issues"
   },
-  "homepage": "https://github.com/lannonbr/repo-push-check-action#readme",
+  "homepage": "https://github.com/lannonbr/repo-permission-check-action#readme",
   "dependencies": {
     "actions-toolkit": "0.0.4"
   }
