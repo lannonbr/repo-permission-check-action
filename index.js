@@ -10,21 +10,18 @@ const username = tools.context.actor;
     tools.context.repo({ username })
   );
 
-  let permission = response.data.permission;
+  let permission = response.data.permission; // Permission level of actual user
+  let argPerm = tools.arguments._[0]; // Permission level passed in through args
 
-  console.log({ args: tools.arguments });
+  let yourPermIdx = perms.indexOf(permission);
+  let requiredPermIdx = perms.indexOf(argPerm);
 
-  // let yourPermIdx = perms.indexOf(permission);
+  console.log(`[Action] User Permission: ${permission}`);
+  console.log(`[Action] Minimum Action Permission: ${argPerm}`);
 
-  // let requiredPermIdx = perms.indexOf(tools.arguments);
-
-  // if (yourPermIdx >= requiredPermIdx) {
-  //   process.exit(0);
-  // } else {
-  //   process.exit(1);
-  // }
-
-  if (["write", "admin"].includes(permission)) {
+  // If the index of your permission is at least or greater than the required,
+  // exit sucessfully. Otherwise fail.
+  if (yourPermIdx >= requiredPermIdx) {
     process.exit(0);
   } else {
     process.exit(1);
