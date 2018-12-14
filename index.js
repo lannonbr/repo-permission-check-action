@@ -5,7 +5,7 @@ const octokit = tools.createOctokit();
 const perms = ["admin", "write", "read", "none"];
 
 const username = tools.context.actor;
-tools.arguments(async () => {
+(async () => {
   const response = octokit.repos.getCollaboratorPermissionLevel(
     tools.context.repo({ username })
   );
