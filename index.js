@@ -1,13 +1,12 @@
 const { Toolkit } = require("actions-toolkit");
 const tools = new Toolkit();
-const octokit = tools.createOctokit();
 
 // Permission levels higher in the array have higher access to the repo.
 const perms = ["none", "read", "write", "admin"];
 
 const username = tools.context.actor;
 (async () => {
-  const response = await octokit.repos.getCollaboratorPermissionLevel(
+  const response = await tools.github.repos.getCollaboratorPermissionLevel(
     tools.context.repo({ username })
   );
 
