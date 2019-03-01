@@ -1,6 +1,6 @@
 FROM node:10.14.2-slim
 
-LABEL version="1.1.0"
+LABEL version="1.2.0"
 LABEL repository="https://github/lannonbr/repo-permission-check-action"
 LABEL maintainer="Benjamin Lannon <benjamin@lannonbr.com>"
 
