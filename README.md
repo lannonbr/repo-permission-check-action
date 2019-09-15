@@ -18,7 +18,7 @@ Say I want to have an action to only pass if a user has write access to the repo
 ```yaml
 steps:
   - name: "Check if user has write access"
-    uses: "lannonbr/repo-permission-check-action@master"
+    uses: "lannonbr/repo-permission-check-action@2.0.0"
     with:
       permission: "write"
     env:
