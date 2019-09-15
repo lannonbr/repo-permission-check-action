@@ -3,7 +3,9 @@
   "version": "1.2.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "./node_modules/.bin/ncc build index.js -o lib"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lannonbr/repo-permission-check-action.git"
@@ -15,6 +17,10 @@
   },
   "homepage": "https://github.com/lannonbr/repo-permission-check-action#readme",
   "dependencies": {
-    "actions-toolkit": "^1.5.0"
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5"
   }
 }

@@ -15,12 +15,14 @@ This action will check on the current repo if the user has a high enough permiss
 
 Say I want to have an action to only pass if a user has write access to the repo, I can use the action as follows:
 
-```workflow
-action "Check Push Access" {
-  uses = "lannonbr/repo-permission-check-action@master"
-  args = ["write"]
-  secrets = ["GITHUB_TOKEN"]
-}
+```yaml
+steps:
+  - name: "Check if user has write access"
+    uses: "lannonbr/repo-permission-check-action@master"
+    with:
+      permission: "write"
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 This will allow anyone with write or higher permissions to succeed.

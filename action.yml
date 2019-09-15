@@ -1,0 +1,13 @@
+name: Repo Permission Check Action
+author: "Benjamin Lanon <benjamin@lannonbr.com>"
+description: Check if a user has specific access to this repo
+inputs:
+  permission:
+    description: the max permission level required
+    required: true
+runs:
+  using: "node12"
+  main: "lib/main.js"
+branding:
+  icon: "check"
+  color: "green"
