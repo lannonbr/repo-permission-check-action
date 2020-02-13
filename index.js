@@ -23,7 +23,7 @@ const username = github.context.actor;
   core.debug(`[Action] Minimum Action Permission: ${argPerm}`);
 
   // If the index of your permission is at least or greater than the required,
-  // exit sucessfully. Otherwise fail.
+  // exit successfully. Otherwise fail.
   if (yourPermIdx >= requiredPermIdx) {
     process.exit(0);
   } else {
