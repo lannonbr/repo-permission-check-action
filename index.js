@@ -14,7 +14,7 @@ const username = github.context.actor;
   });
 
   let permission = response.data.permission; // Permission level of actual user
-  let argPerm = core.getInput("permision"); // Permission level passed in through args
+  let argPerm = core.getInput("permission"); // Permission level passed in through args
 
   let yourPermIdx = perms.indexOf(permission);
   let requiredPermIdx = perms.indexOf(argPerm);
