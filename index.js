@@ -14,7 +14,7 @@ const username = github.context.actor;
   });
 
   let permission = response.data.permission; // Permission level of actual user
-  let argPerm = core.getInput("permision"); // Permission level passed in through args
+  let argPerm = core.getInput("permission"); // Permission level passed in through args
 
   let yourPermIdx = perms.indexOf(permission);
   let requiredPermIdx = perms.indexOf(argPerm);
@@ -23,7 +23,7 @@ const username = github.context.actor;
   core.debug(`[Action] Minimum Action Permission: ${argPerm}`);
 
   // If the index of your permission is at least or greater than the required,
-  // exit sucessfully. Otherwise fail.
+  // exit successfully. Otherwise fail.
   if (yourPermIdx >= requiredPermIdx) {
     process.exit(0);
   } else {
