@@ -1,14 +1,14 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
-const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
 // Permission levels higher in the array have higher access to the repo.
 const perms = ["none", "read", "write", "admin"];
 
 const username = github.context.actor;
 (async () => {
-  const response = await octokit.repos.getCollaboratorPermissionLevel({
+  const response = await octokit.rest.repos.getCollaboratorPermissionLevel({
     ...github.context.repo,
     username: username
   });
