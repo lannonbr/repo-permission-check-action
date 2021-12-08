@@ -1,10 +1,17 @@
 name: Repo Permission Check Action
 author: "Benjamin Lanon <benjamin@lannonbr.com>"
 description: Check if a user has specific access to this repo
+outputs:
+  permitted:
+    description: "'true' or 'false' depending on actor permission meeting the requirement"
 inputs:
   permission:
-    description: the max permission level required
+    description: the minimum permission level required
     required: true
+  fail:
+    description: fail the job if the minimum permission level it not meet
+    required: false
+    default: "true"
 runs:
   using: "node12"
   main: "lib/index.js"
